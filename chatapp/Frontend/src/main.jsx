@@ -19,7 +19,7 @@ import {
 
 import './style.css';
 
-const API = 'http://localhost:5000/api';
+const API = `${import.meta.env.VITE_API_URL}/api`;
 
 let socket;
 
@@ -251,7 +251,7 @@ function App({ data, onLogout }) {
 
   useEffect(() => {
 
-    socket = io('http://localhost:5000');
+    socket = io(import.meta.env.VITE_API_URL);
 
     socket.emit(
       'join',
