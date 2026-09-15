@@ -489,3 +489,14 @@ mongoose
       e.message
     );
   });
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+// CORS কনফিগারেশন
+app.use(cors({
+  origin: 'https://nova-chat-mem-chat-app-itdz-71sz6cmsa-sangta-nayek.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
